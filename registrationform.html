@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restration Form</title>
+
+    <style>
+        body {
+          background-color: #5784dc;
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .outer-container {
+          background-color: white;
+          width: 600px;
+          height: 400px;
+        }
+       
+        .inner-container {
+          margin: 10px 20px 20px 20px;
+        }
+        .form {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+        }
+
+        input {
+          width: 250px;
+          height: 30px;
+          border: 1.3px solid #05abf8;
+          margin-bottom: 10px;
+        }
+        .button {
+          margin: 20px 10px 40px 160px;
+          background-color: #3788dc;
+          height: 35px;
+          color: white;
+        }
+      </style>
+
+</head>
+<body>
+    
+    <div class="outer-container">
+        <h2 style="text-align: center;">Create Account</h2>  
+          <div class="inner-container">
+            <form class="form">
+              <div class="left">
+                <label>First Name:</label><br />
+                <input type="text" name="fname" /><br />
+                <label>Email</label><br />     
+                <input type="email" name="email" /><br />
+                <label>Password</label><br />
+                <input type="password" name="password" /><br />
+              </div>
+              <div class="right">
+                <label>Last Name:</label><br />             
+                <input type="text" name="lname" /><br />            
+                <label>Phone Number</label><br />             
+                <input type="number" name="pnumber" /><br />       
+                <label>Cofirm Password</label><br />    
+                <input type="password" name="cpassword" /><br />
+              </div>
+            </form>
+          </div>
+          <div>
+            <input class="button" type="submit" value="Sign Up" />
+          </div>
+      </div>
+</body>
+</html>
+
+
