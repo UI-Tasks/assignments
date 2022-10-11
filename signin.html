@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signin to Account</title>
+  
+    <style>
+body {
+background: rgb(4, 4, 4);  
+font-family: sans-serif;
+}
+
+.login {
+  width: 600px;
+  margin: 10px;
+  font-size: 15px;
+}
+
+
+.login-header,
+.login p {
+  margin: 0;
+}
+
+.login-header {
+  background: rgb(2, 53, 94);
+  padding: 20px;
+  font-size: 1rem;
+  font-weight: normal;
+  text-align: center;
+  text-transform: uppercase;
+  color: white;;
+}
+
+.login-section {
+  background: white;
+  padding: 20px;
+}
+
+a{
+    color: blue;
+  }
+.login p {
+  padding: 20px;
+}
+
+.login input {
+  box-sizing: border-box;
+  width: 100%;
+  border-width: 1px;
+  border-style: solid;
+  padding: 15px;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+
+.login input[type="submit"] {
+  background: rgb(3, 87, 156);
+  color: white;
+}
+
+
+.footer {
+    text-align: center;
+    border: 1px solid white;
+    background-color: white;
+    color: rgb(3, 87, 156);
+    box-sizing: border-box;
+  }
+
+</style>
+
+</head>
+<body>
+    <div class="login"> 
+        <h3 class="login-header">Sign In to your Account</h3>
+        <form class="login-section">
+          <p><input type="email" placeholder="Email"></p>
+          <p><input type="password" placeholder="Password"></p>
+          <p style="text-align: right;"><a href="">Forgot Password</a></p>
+          <p><input type="submit" value="Sign in"></p><br>
+          <p class="footer">New User?&nbsp;<a href="">Forgot Password</a></p>
+        </form>
+      </div>
+</body>
+</html>
