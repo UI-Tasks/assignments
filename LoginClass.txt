@@ -1,0 +1,51 @@
+import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+class LoginClassComponent extends React.Component {
+    constructor(props){
+        super(props);
+        this.state = { firstname: '',lastname:'',email:'', password: ''}
+    }
+    setEmpState = (e) => {
+           const value = e.target.value;
+           const field =  e.target.name;
+           this.setState({[field]:value})
+    }
+    handleLogin = (e) => {
+        e.preventDefault();
+        if(this.state.firstname == ""|| this.state.lastname == ""|| this.state.email== "" || this.state.password ==""){
+            alert("Please fill all the details");
+        }
+        else{
+        alert('Registered successfully');}
+    }
+    render() {
+        return(<React.Fragment>
+            <form>
+                <div className="form-group">
+                    <label>Firstname:</label>
+                    <input style={{width:'40%'}} type="text" className="form-control" value={this.state.name} id="firstname" placeholder="Enter Name" name="firstname" onChange={this.setEmpState} />
+                </div>
+                <div className="form-group">
+                    <label>Lastname:</label>
+                    <input style={{width:'40%'}} type="text" className="form-control" value={this.state.name} id="lastname" placeholder="Enter Name" name="lastname" onChange={this.setEmpState} />
+                </div>
+                <div className="form-group">
+                    <label>Email:</label>
+                    <input style={{width:'40%'}} type="email" className="form-control" value={this.state.name} id="email" placeholder="Enter Name" name="email" onChange={this.setEmpState} />
+                </div>
+                <div className="form-group">
+                    <label>Password:</label>
+                    <input style={{width:'40%'}} type="password" className="form-control" value={this.state.password} id="pwd" placeholder="Enter password" name="password" onChange={this.setEmpState} />
+                </div>
+               <button type="submit" className="btn btn-primary" onClick={this.handleLogin}>Login</button>
+           </form>
+           <div className="resultDiv">
+    <h1>First Name:{this.state.firstname}</h1>
+    <h1>Last Name:{this.state.lastname}</h1>
+    <h1>Email:{this.state.email}</h1>
+    <h1>Password:{this.state.password}</h1>
+</div>
+        </React.Fragment>)
+    }
+}
+export default LoginClassComponent;
