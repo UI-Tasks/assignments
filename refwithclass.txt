@@ -1,0 +1,63 @@
+import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+class RefWithClassComponent extends React.Component {
+    constructor(props){
+        super(props);
+        this.state = {fname:'',lname:'',email:'',password:''}
+        this.firstnameRef = React.createRef()
+        this.lastnameRef = React.createRef()
+        this.emailRef = React.createRef()
+        this.pwdRef = React.createRef()
+    }
+    setFname = () =>{
+        this.setState({fname: this.firstnameRef.current.value})
+      }
+      setLname = () =>{
+        this.setState({lname: this.lastnameRef.current.value})
+      }
+      setEmail = () =>{
+        this.setState({email: this.emailRef.current.value})
+      }
+      setPwd = () =>{
+        this.setState({password: this.pwdRef.current.value})
+      }
+    handleLogin = (e) => {
+        e.preventDefault();
+        if(this.firstnameRef.current.value==="" ||this.lastnameRef.current.value==="" ||this.emailRef.current.value==="" || this.pwdRef.current.value==="") {
+            alert("Please Enter All the Fields")
+        }else{
+        alert("Welcome " + this.firstnameRef.current.value);
+        }
+    }
+    render() {
+        return(<React.Fragment>
+            <form>
+                <div className="form-group">
+                    <label>First Name:</label>
+                    <input style={{width:'40%'}} type="text" className="form-control" id="fname" placeholder="Enter First Name" name="firstname" onChange={this.setFname} ref={this.firstnameRef}/>
+                </div>
+                <div className="form-group">
+                    <label>Last Name:</label>
+                    <input style={{width:'40%'}} type="text" className="form-control" id="lname" placeholder="Enter Last Name" name="lastname" onChange={this.setLname} ref={this.lastnameRef}/>
+                </div>
+                <div className="form-group">
+                    <label>Email:</label>
+                    <input style={{width:'40%'}} type="text" className="form-control" id="email" placeholder="Enter Email" name="email" onChange={this.setEmail} ref={this.emailRef}/>
+                </div>
+                <div className="form-group">
+                    <label>Password:</label>
+                    <input style={{width:'40%'}} type="password" className="form-control" id="password" placeholder="Enter password" name="password"onChange={this.setPwd} ref={this.pwdRef} />
+                </div>
+               <button type="submit" className="btn btn-primary" onClick={this.handleLogin}>Login</button>
+           </form>
+
+           <div className="resultDiv">
+    <h1>First Name:{this.state.fname}</h1>
+     <h1>Last Name:{this.state.lname}</h1>
+    <h1>Email:{this.state.email}</h1>
+    <h1>Password:{this.state.password}</h1>  
+</div>
+        </React.Fragment>)
+    }
+}
+export default RefWithClassComponent;
