@@ -1,0 +1,105 @@
+import {useState,useRef} from 'react';
+import "bootstrap/dist/css/bootstrap.min.css";
+const RefWithFunctionalComponent = () => {
+    const firstnameRef = useRef('')
+    const lastnameRef = useRef('')
+    const emailRef = useRef('')
+    const passwordRef = useRef('')
+    const [fname,setFname] = useState('')
+    const [lname,setLname] = useState('')
+    const [email,setEmail] = useState('')
+    const [password,setPassword] = useState('')
+    const [success,setSuccess] = useState('')
+    const [error,setError]= useState('')
+    const handleSubmit = (event) => {
+        event.preventDefault()
+        if(firstnameRef.current.value===""||lastnameRef.current.value===""||emailRef.current.value===""||passwordRef.current.value==="") {
+            setError(alert("Enter All the Fields"));
+            setSuccess("")
+        }
+        else {
+            setSuccess(alert("Login Success"))
+            setError("")
+        }
+    }
+const changeFirstName = ()=>{
+    setFname(firstnameRef.current.value);
+}
+const changeLastName = ()=>{
+    setLname(lastnameRef.current.value);
+}
+const changeEmail = ()=>{
+    setEmail(emailRef.current.value);
+}
+const changePassword = ()=>{
+    setPassword(passwordRef.current.value);
+}
+  return (
+    <>
+      <div className="container">
+        <form onSubmit={handleSubmit}>
+          <div className="form-group">
+            <label htmlFor="name">FirstName:</label>
+            <input
+              style={{ width: "40%" }}
+              type="text"
+              id="name"
+              ref={firstnameRef}
+            onChange={changeFirstName}
+              className="form-control"
+              placeholder="Enter First Name"
+            />
+          </div>
+<div className="form-group">
+            <label htmlFor="name">LastName:</label>
+            <input
+              style={{ width: "40%" }}
+              type="text"
+              id="name"
+             onChange={changeLastName}
+              ref={lastnameRef}
+              className="form-control"
+              placeholder="Enter Last Name"
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="name">Email:</label>
+            <input
+              style={{ width: "40%" }}
+              type="text"
+              id="name"
+              onChange={changeEmail}
+              ref={emailRef}
+              className="form-control"
+              placeholder="Enter Email"
+            />
+          </div>
+           <div className="form-group">
+            <label htmlFor="pwd">Password:</label>
+            <input
+              style={{ width: "40%" }}
+              type="password"
+              id="pwd"
+              onChange={changePassword}
+              ref={passwordRef}
+              className="form-control"
+              placeholder="Enter password"
+            />
+          </div>
+          <button type="submit" className="btn btn-primary">
+            Login
+          </button>
+          {success?<div className="text-success">{success}</div>:null}
+          {error?<div className="text-danger">{error}</div>:null}
+        </form>
+ <div className="resultDiv">
+    <h1>First Name:{fname}</h1>
+    <h1>Last Name:{lname}</h1>
+    <h1>Email:{email}</h1>
+    <h1>Password:{password}</h1>   
+</div> 
+      </div>
+    </>
+  );
+};
+export default RefWithFunctionalComponent;
